@@ -1,0 +1,88 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn.cluster import KMeans
+from scipy.stats import entropy
+
+# Define the bouncing intensity function
+def bouncing_intensity(E, I, S, K, L):
+    return E * np.sin(I / (S * K)) * np.exp(-L)
+
+# Define parameter ranges
+E_values = np.linspace(0.1, 10, 5)  # External energy
+S_values = np.linspace(1, 10, 5)  # Processing capacity
+K_values = np.linspace(0.5, 5, 5)  # Complexity of input
+L_values = np.linspace(0.1, 2, 5)  # Adaptive limit factor
+I = 50  # Constant number of interactions
+
+# Generate experiment data
+results = []
+for E in E_values:
+    for S in S_values:
+        for K in K_values:
+            for L in L_values:
+                B_next = bouncing_intensity(E, I, S, K, L)
+                results.append([E, S, K, L, B_next])
+
+# Convert to DataFrame
+df = pd.DataFrame(results, columns=["E", "S", "K", "L", "B_next"])
+
+# Save results
+csv_filename = "bouncing_intensity_results.csv"
+df.to_csv(csv_filename, index=False)
+
+# Monte Carlo Simulation
+num_samples = 1000  # Number of random samples
+E_samples = np.random.uniform(0.1, 10, num_samples)
+S_samples = np.random.uniform(1, 10, num_samples)
+K_samples = np.random.uniform(0.5, 5, num_samples)
+L_samples = np.random.uniform(0.1, 2, num_samples)
+
+monte_carlo_results = []
+for i in range(num_samples):
+    B_next = bouncing_intensity(E_samples[i], I, S_samples[i], K_samples[i], L_samples[i])
+    monte_carlo_results.append([E_samples[i], S_samples[i], K_samples[i], L_samples[i], B_next])
+
+monte_carlo_df = pd.DataFrame(monte_carlo_results, columns=["E", "S", "K", "L", "B_next"])
+
+# AI Cluster Analysis
+features = monte_carlo_df[["E", "S", "K", "L"]]
+kmeans = KMeans(n_clusters=4, random_state=42, n_init=10)
+monte_carlo_df["Cluster"] = kmeans.fit_predict(features)
+
+# Chaos Theory Validation
+bouncing_entropy = entropy(np.histogram(monte_carlo_df["B_next"], bins=20, density=True)[0])
+
+def lyapunov_exponent(values):
+    diffs = np.abs(np.diff(values))
+    return np.mean(np.log(diffs[diffs > 0]))  # Avoid log(0) errors
+
+lyapunov_exp = lyapunov_exponent(monte_carlo_df["B_next"].values)
+
+# Save Monte Carlo results
+monte_carlo_csv = "monte_carlo_results.csv"
+monte_carlo_df.to_csv(monte_carlo_csv, index=False)
+
+# Print validation results
+print(f"Entropy of B_next: {bouncing_entropy}")
+print(f"Lyapunov Exponent: {lyapunov_exp}")
+
+# Plot Monte Carlo distribution
+plt.figure(figsize=(10, 6))
+plt.hist(monte_carlo_df["B_next"], bins=50, alpha=0.7, color='blue', label="B_next Distribution")
+plt.xlabel("Bouncing Intensity (B_next)")
+plt.ylabel("Frequency")
+plt.title("Monte Carlo Distribution of Bouncing Intensity")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# Save cluster visualization
+plt.figure(figsize=(10, 6))
+scatter = plt.scatter(monte_carlo_df["E"], monte_carlo_df["B_next"], c=monte_carlo_df["Cluster"], cmap="viridis", alpha=0.5)
+plt.colorbar(scatter, label="Cluster Group")
+plt.xlabel("External Energy (E)")
+plt.ylabel("Bouncing Intensity (B_next)")
+plt.title("AI Cluster Analysis of Computational Fluctuations")
+plt.grid(True)
+plt.show()
