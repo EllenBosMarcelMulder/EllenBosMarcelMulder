@@ -15,7 +15,7 @@ The Theory of Ellen Bos and Marcel Mulder introduces a new paradigm in informati
 ✔ Open-source documentation on how this theory can transform computational processing  
 ✔ Applications for AI, quantum computing, and information science  
 
-🎓 **License:** will be released in a moment.
+🎓 **License:** CC BY-NC-SA: Creative Commons Attribution-Noncommercial-ShareAlike
 
 📩 **Contact and Collaboration:** Open for discussion and research. Submit issues or pull requests!
 
