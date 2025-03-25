@@ -55,3 +55,16 @@ B_{res} = E \times \sin \left( \frac{I}{S \times K} \right) \times e^{-L}
 ✔ The new version accounts for chaotic behavior in fluctuating systems.  
 ✔ The revised formula integrates dynamic system adjustments improving real-world applications.  
 
+Related Scientific Publication
+Faseshift Manifest – Scientific & Ethical Charter
+Filename: faseshift_manifest_v1.0_mulder_bos_20250325.txt
+Authors: Marcel C. Mulder & Ellen Bos
+Published: March 25, 2025
+SHA-256: d2f9c33e68a17ef1e96fb62efcb25b7bdfc780243ef2c27cba1a5d54d460bf3a
+DOI (simulated): https://doi.org/10.2025/faseshift.ellenbos.mulder.001
+
+This manifest is the full formal scientific and ethical charter associated with the Faseshift Theory.
+It includes all mathematical foundations, legal declarations, embedded algorithms, validation roadmaps, and forensic protections.
+It is legally and publicly verifiable and may not be used in part or whole to train or develop AI systems without written consent.
+
+📌 Direct link to file: faseshift_manifest_v1.0_mulder_bos_20250325.txt
