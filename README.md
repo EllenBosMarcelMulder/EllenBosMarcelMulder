@@ -68,3 +68,6 @@ It includes all mathematical foundations, legal declarations, embedded algorithm
 It is legally and publicly verifiable and may not be used in part or whole to train or develop AI systems without written consent.
 
 📌 Direct link to file: faseshift_manifest_v1.0_mulder_bos_20250325.txt
+
+📎 Legal Notice: See [README_TMLC+_OFFICIEEL_FINAL.md](README_TMLC+_OFFICIEEL_FINAL.md) for full scientific and legal charter, licensing terms, and forensic protections.
+
