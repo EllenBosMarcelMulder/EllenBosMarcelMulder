@@ -152,5 +152,6 @@ It is legally and publicly verifiable and may not be used in part or whole to tr
 # Encode en hash berekenen
 import hashlib
 hash_updated_readme = hashlib.sha256(updated_readme_md.encode('utf-8')).hexdigest()
-hash_updated_readme🔏 HASH VAN DIT SEGMENT (SHA-256): e7209e3666a13ae36bf310273e04dcdb4583c255baf29ac1bc7700c7b7075043
+hash_updated_readme🔏 HASH VAN DIT SEGMENT (SHA-256): e7209e3666a13ae36bf310273e04dcdb4583c255baf29ac1bc7700c7b7075043Final SHA-256 verification hash of this document:
+HASH: 80ee1393187c9632b0f062964b4535e13a1b743a2fcbdd26684bfa3b1ec6e880
 
