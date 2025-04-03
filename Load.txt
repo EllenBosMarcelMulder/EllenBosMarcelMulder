@@ -1,0 +1,19 @@
+# De tekst van het idee
+idea_text = """
+Idee om te beschermen:
+Het idee draait om loadbalancing en energiebalancering binnen een gedecentraliseerd veldmodel. Hierbij wordt energie naar verschillende apparaten of nodes gestuurd binnen een hexagonale structuur. Elke node in het veld heeft dynamisch de capaciteit om zijn energiebehoefte aan te passen op basis van de omgevingsomstandigheden, gebruikmakend van versleuteling en blockchain voor veiligheid.
+De beveiliging van deze structuur wordt gegarandeerd door meervoudige goedkeuringen en cryptografische handtekeningen, die zorgen voor een onveranderlijke en gecontroleerde distributie van energie.
+Alle wijzigingen in de energieverdeling worden gedocumenteerd via een versleuteld log en zijn alleen zichtbaar voor bevoegde partijen. Het systeem zorgt voor automatische failsafes, die geactiveerd worden wanneer de juiste goedkeuringen niet worden gegeven.
+"""
+
+# Bereken de hash van de tekst
+hash_sha256 = hashlib.sha256()
+hash_sha256.update(idea_text.encode('utf-8'))
+idea_hash = hash_sha256.hexdigest()
+
+# Bestandsnaam voor het idee
+idea_filename = "idee_om_te_beschermen.txt"
+
+idea_hash, idea_filename
+
+copyright Marcel Christian Mulder. 
